@@ -1,0 +1,106 @@
+/* TaskForm Styles */
+.task-form-container {
+  width: 100%;
+}
+
+.task-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+  transition: var(--transition);
+}
+
+.task-form.expanded {
+  background-color: var(--background-secondary);
+  padding: var(--spacing-lg);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-color);
+}
+
+.task-form .form-group {
+  margin-bottom: 0;
+}
+
+.task-form .form-input {
+  font-size: 1rem;
+  padding: var(--spacing-md);
+}
+
+.task-form .form-input::placeholder {
+  color: var(--text-tertiary);
+}
+
+.task-form .form-textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.task-form .form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-lg);
+  margin-bottom: var(--spacing-lg);
+}
+
+.task-form .form-actions {
+  display: flex;
+  gap: var(--spacing-md);
+  justify-content: flex-end;
+  margin-top: var(--spacing-lg);
+}
+
+.task-form .form-actions .btn {
+  flex: 0 1 auto;
+  min-width: 120px;
+}
+
+.task-form .btn-expand {
+  border: 2px dashed var(--border-color);
+  background-color: transparent;
+  color: var(--text-secondary);
+  padding: var(--spacing-lg);
+  font-weight: 600;
+  transition: var(--transition);
+}
+
+.task-form .btn-expand:hover {
+  background-color: var(--background-tertiary);
+  border-color: var(--primary-color);
+  color: var(--primary-color);
+}
+
+/* Form Input Focus States */
+.task-form .form-input:focus,
+.task-form .form-textarea:focus,
+.task-form .form-select:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+/* Character Counter */
+.char-count {
+  font-size: 0.75rem;
+  color: var(--text-tertiary);
+  text-align: right;
+  margin-top: var(--spacing-xs);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .task-form.expanded {
+    padding: var(--spacing-md);
+  }
+
+  .task-form .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .task-form .form-actions {
+    flex-direction: column;
+  }
+
+  .task-form .form-actions .btn {
+    width: 100%;
+  }
+}
